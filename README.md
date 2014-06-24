@@ -18,20 +18,30 @@ installing a new instance SugarCRM in an empty node.
 
 ## Install
 
-1. Create an account at https://www.openshift.com
-2. Create a php-5.3 application and attach the mysql cartridge to it:
+**Step1** Create an account at https://www.openshift.com
+
+**Step2** Create a php-5.3 application and attach the mysql cartridge to it:
+````    
     $ rhc app create sugarcrm php-5.3 mysql-5.1
-3. Add this upstream sugarcrm repo
+````
+
+**Step3** Add this upstream sugarcrm repo
 ````
     $ cd sugarcrm
     $ git remote add upstream -m master git://github.com/openshift-quickstart/sugarcrm-example.git
     $ git pull -s recursive -X theirs upstream master
 ````
-4. Then push the repo upstream
+**Step4** Then push the repo upstream
+````    
     $ git push
-5. That's it, you can now checkout your application at:
+````
+
+**Step5** That's it, you can now checkout your application at:
+````
     http://sugarcrm-$yournamespace.rhcloud.com
-6. Login using admin/admin (username, password)
+````
+
+**Step6** Login using admin/admin (username, password)
 
 ## Special Thanks
 
