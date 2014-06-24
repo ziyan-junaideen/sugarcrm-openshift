@@ -1,26 +1,47 @@
-Quickstart
-==========
+# SugarCRM on OpenShift
 
-1) Create an account at https://www.openshift.com
-2) Create a php-5.3 application and attach the mysql cartridge to it:
-    $ rhc app create sugarcrm php-5.3 mysql-5.1 
-3) Add this upstream sugarcrm repo
+SugarCRM is one of the popular free and open source CRMs in the wild. Although
+installing an instance of SugarCRM in a VPS or dedicated server can be handled
+by the documentation, there needs some modifications that need to be done to 
+host it in OpenShift RedHat Cloud Computing.
+
+With this repository, I hope I will be able t make a installer that will make 
+the installation much easier for any new commer to OpenShift to use SugarCRM.
+
+## Notice
+
+The current version hosted is still experimental and is a pre release. This 
+method should not be used to update the system. I am my self new to SugarCRM
+and am not sure on how the upgrade process will work. I intend to update this
+document in the future regarding upgading. As per the moment it is about 
+installing a new instance SugarCRM in an empty node.
+
+## Install
+
+1. Create an account at https://www.openshift.com
+2. Create a php-5.3 application and attach the mysql cartridge to it:
+    $ rhc app create sugarcrm php-5.3 mysql-5.1
+3. Add this upstream sugarcrm repo
+````
     $ cd sugarcrm
     $ git remote add upstream -m master git://github.com/openshift-quickstart/sugarcrm-example.git
     $ git pull -s recursive -X theirs upstream master
-4) Then push the repo upstream
+````
+4. Then push the repo upstream
     $ git push
-5) That's it, you can now checkout your application at:
+5. That's it, you can now checkout your application at:
     http://sugarcrm-$yournamespace.rhcloud.com
-6) Default Admin Username: admin
-   Default Admin Password: admin
+6. Login using admin/admin (username, password)
 
+## Special Thanks
 
-Updates
-=======
+## About me
 
-In order to update or upgrade to the latest version of SugarCRM, use the in-app
-upgrade tool ( see http://www.sugarcrm.com/crm/support/documentation/SugarCommunityEdition )
+I am Ziyan, a computer engineer and a hobbyist web developer form Colombo
+Sri Lanka. I have my share of fun building custom web applications for clients
+and once in a while I get requests on how to configure and intall apps in a 
+variety of platforms.
 
-Do not use git to upgrade. If you need to update your instance, use the 'rhc app snapshot save' tool to pull down changes first to
-incorporate them into your local install ( see http://docs.redhat.com/docs/en-US/OpenShift_Express/1.0/html/User_Guide/sect-User_Guide-OpenShift_Express_Application_Development-Downloading_OpenShift_Express_Applications.html for details )
+SugarCRM on OpenShift has been one such request that has gained my attention
+as I am my self new to OpenShift.
+
